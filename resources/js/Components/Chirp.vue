@@ -1,5 +1,6 @@
 <script setup>
 import Dropdown from '@/Components/Dropdown.vue';
+import DropdownLink from '@/Components/DropdownLink.vue';
 import InputError from '@/Components/InputError.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import dayjs from 'dayjs';
@@ -49,6 +50,11 @@ const editing = ref(false);
                             @click="editing = true">
                             Edit
                         </button>
+                        <form @submit.prevent="form.delete(route('chirps.destroy', chirp.id))">
+                            <DropdownLink as="button">
+                                Delete
+                            </DropdownLink>
+                        </form>
                     </template>
                 </Dropdown>
             </div>

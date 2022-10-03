@@ -35,5 +35,5 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource('chirps', ChirpController::class)
-        ->only(['index', 'store', 'update']);
+        ->only(['index', 'store', 'update', 'destroy']);
 });
